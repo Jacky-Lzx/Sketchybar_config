@@ -2,13 +2,16 @@
 
 update() {
   source "$CONFIG_DIR/colors.sh"
-  COLOR=$BACKGROUND_2
+  BACKGROUND_BORDER_COLOR=$SPACE_UNSELECTED_BACKGROUND_BORDER_COLOR
+  BACKGROUND_COLOR=$SPACE_UNSELECTED_BACKGROUND_COLOR
   if [ "$SELECTED" = "true" ]; then
-    COLOR=0xfff5e0dc
+    BACKGROUND_BORDER_COLOR=$SPACE_SELECTED_BACKGROUND_BORDER_COLOR
+    BACKGROUND_COLOR=$SPACE_SELECTED_BACKGROUND_COLOR
   fi
   sketchybar --set $NAME icon.highlight=$SELECTED \
                          label.highlight=$SELECTED \
-                         background.border_color=$COLOR
+                         background.border_color=$BACKGROUND_BORDER_COLOR \
+                         background.color=$BACKGROUND_COLOR
 }
 
 mouse_clicked() {

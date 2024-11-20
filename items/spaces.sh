@@ -20,13 +20,13 @@ do
     padding_right=2
     # Controll the right padding of a block
     label.padding_right=15
-    icon.highlight_color=0xfff5e0dc
-    label.color=$SKY
-    label.highlight_color=0xfff5e0dc
+    icon.highlight_color=$SPACE_SELECTED_COLOR
+    label.color=$SPACE_UNSELECTED_COLOR
+    label.highlight_color=$SPACE_SELECTED_COLOR
     label.font="sketchybar-app-font:Regular:14.0"
     label.y_offset=-1
-    background.color=$BACKGROUND_1
-    background.border_color=$BACKGROUND_2
+    background.color=$SPACE_UNSELECTED_BACKGROUND_COLOR
+    background.border_color=$SPACE_UNSELECTED_BACKGROUND_BORDER_COLOR
     background.drawing=off
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"

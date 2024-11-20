@@ -9,8 +9,9 @@ if [[ $method != "" ]]; then
                           label="en" \
                           icon.drawing=off \
                           drawing=on \
-                          label.color=$BLUE \
-                          icon.color=$BLUE
+                          label.color=$TEXT_DARK_COLOR \
+                          icon.color=$TEXT_DARK_COLOR \
+                          background.color=$INPUT_EN_BACKGROUND_COLOR
 else
-  sketchybar -m --set input_method icon="󰘳" label="cn" drawing=on icon.drawing=on label.color=0xfffab387 icon.color=0xfffab387
+  sketchybar -m --set input_method icon="󰘳" label="cn" drawing=on icon.drawing=on label.color=$TEXT_DARK_COLOR icon.color=$TEXT_DARK_COLOR background.color=$INPUT_CN_BACKGROUND_COLOR
 fi

@@ -53,9 +53,9 @@ defaults=(
   label.padding_right=$PADDINGS
   padding_right=$PADDINGS
   padding_left=$PADDINGS
-  background.height=26
-  background.corner_radius=2
-  background.border_width=2
+  background.height=22
+  background.corner_radius=0
+  background.border_width=0
   background.color=$BACKGROUND_COLOR
   popup.background.corner_radius=2
   popup.background.border_width=2
@@ -87,9 +87,9 @@ source "$ITEM_DIR/battery.sh"
 
 sketchybar --add item input_method right \
   --set input_method script="$PLUGIN_DIR/input_method.sh" \
-                         background.padding_right=12     \
+                         padding_left=0 \
+                         padding_right=0 \
                          update_freq=1 \
-
 
 # sketchybar --add item wifi right \
 #            --set wifi script='sketchybar --set $NAME label="$INFO"' \
