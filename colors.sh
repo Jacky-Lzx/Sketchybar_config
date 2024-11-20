@@ -30,11 +30,11 @@ export POPUP_BORDER_COLOR=$WHITE
 
 export SHADOW_COLOR=$BLACK
 
-----------------------------------------
-
+# ----------------------------------------
+#
 # New color definitions
-
-----------------------------------------
+#
+# ----------------------------------------
 export Transparent=0x00000000
 # Color Palette: Catppuccin Mocha
 export Catppuccin_Mocha_Rosewater=0xfff5e0dc
@@ -90,3 +90,5 @@ export Input_CN_Background_Color=$Catppuccin_Mocha_Yellow
 export Battery_Background_Color=$Catppuccin_Mocha_Green
 
 export Calender_Background_Color=$Catppuccin_Mocha_Mauve
+
+Nowplaying_Popup_Background_Color=$Background_Color
