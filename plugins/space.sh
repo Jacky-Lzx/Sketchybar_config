@@ -2,16 +2,19 @@
 
 update() {
   source "$CONFIG_DIR/colors.sh"
-  BACKGROUND_BORDER_COLOR=$SPACE_UNSELECTED_BACKGROUND_BORDER_COLOR
-  BACKGROUND_COLOR=$SPACE_UNSELECTED_BACKGROUND_COLOR
+
   if [ "$SELECTED" = "true" ]; then
-    BACKGROUND_BORDER_COLOR=$SPACE_SELECTED_BACKGROUND_BORDER_COLOR
-    BACKGROUND_COLOR=$SPACE_SELECTED_BACKGROUND_COLOR
+    Background_Border_Color=$Space_Selected_Background_Border_Color
+    Background_Color=$Space_Selected_Background_Color
+  else
+    Background_Border_Color=$Space_Unselected_Background_Border_Color
+    Background_Color=$Space_Unselected_Background_Color
   fi
+
   sketchybar --set $NAME icon.highlight=$SELECTED \
-                         label.highlight=$SELECTED \
-                         background.border_color=$BACKGROUND_BORDER_COLOR \
-                         background.color=$BACKGROUND_COLOR
+    label.highlight=$SELECTED \
+    background.border_color=$Background_Border_Color \
+    background.color=$Background_Color
 }
 
 mouse_clicked() {
@@ -25,8 +28,10 @@ mouse_clicked() {
 
 echo "spaces: $SENDER"
 case "$SENDER" in
-  "mouse.clicked") mouse_clicked
+"mouse.clicked")
+  mouse_clicked
   ;;
-  *) update
+*)
+  update
   ;;
 esac

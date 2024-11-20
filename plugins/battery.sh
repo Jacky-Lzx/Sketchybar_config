@@ -12,19 +12,28 @@ if [ $PERCENTAGE = "" ]; then
 fi
 
 DRAWING=on
-COLOR=$BATTERY_BACKGROUND_COLOR
+COLOR=$Battery_Background_Color
 case ${PERCENTAGE} in
-  # 9[0-9]|100) ICON=$BATTERY_100; DRAWING=off
-  9[0-9]|100) ICON=$BATTERY_100;
+# 9[0-9]|100) ICON=$BATTERY_100; DRAWING=off
+9[0-9] | 100)
+  ICON=$BATTERY_100
   ;;
-  # [6-8][0-9]) ICON=$BATTERY_75; DRAWING=off
-  [6-8][0-9]) ICON=$BATTERY_75;
+# [6-8][0-9]) ICON=$BATTERY_75; DRAWING=off
+[6-8][0-9])
+  ICON=$BATTERY_75
   ;;
-  [3-5][0-9]) ICON=$BATTERY_50; COLOR=0xfffab387
+[3-5][0-9])
+  ICON=$BATTERY_50
+  COLOR=0xfffab387
   ;;
-  [1-2][0-9]) ICON=$BATTERY_25; COLOR=0xfffab387
+[1-2][0-9])
+  ICON=$BATTERY_25
+  COLOR=0xfffab387
   ;;
-  *) ICON=$BATTERY_0; COLOR=0xfff38ba8
+*)
+  ICON=$BATTERY_0
+  COLOR=0xfff38ba8
+  ;;
 esac
 
 if [[ $CHARGING != "" ]]; then

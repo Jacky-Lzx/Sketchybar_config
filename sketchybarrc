@@ -1,9 +1,9 @@
 #!/bin/bash
 
 source "$CONFIG_DIR/colors.sh" # Loads all defined colors
-source "$CONFIG_DIR/icons.sh" # Loads all defined icons
+source "$CONFIG_DIR/icons.sh"  # Loads all defined icons
 
-ITEM_DIR="$CONFIG_DIR/items" # Directory where the items are configured
+ITEM_DIR="$CONFIG_DIR/items"     # Directory where the items are configured
 PLUGIN_DIR="$CONFIG_DIR/plugins" # Directory where all the plugin scripts are stored
 
 FONT="SF Pro" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
@@ -16,7 +16,7 @@ PADDINGS=3 # All paddings use this value (icon, label, background)
 HELPER=git.felix.helper
 killall helper
 (cd $CONFIG_DIR/helper && make)
-$CONFIG_DIR/helper/helper $HELPER > /dev/null 2>&1 &
+$CONFIG_DIR/helper/helper $HELPER >/dev/null 2>&1 &
 
 # Unload the macOS on screen indicator overlay for volume change
 # launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist > /dev/null 2>&1 &
@@ -24,10 +24,10 @@ $CONFIG_DIR/helper/helper $HELPER > /dev/null 2>&1 &
 # Setting up the general bar appearance of the bar
 bar=(
   height=32
-  color=$BAR_COLOR
+  color=$Bar_Color
   blur_radius=30
   border_width=0
-  border_color=$BAR_BORDER_COLOR
+  border_color=$Bar_Border_Color
   corner_radius=10
   shadow=off
   position=top
@@ -56,7 +56,7 @@ defaults=(
   background.height=22
   background.corner_radius=0
   background.border_width=0
-  background.color=$BACKGROUND_COLOR
+  background.color=$Background_Color
   popup.background.corner_radius=2
   popup.background.border_width=2
   popup.background.border_color=$POPUP_BORDER_COLOR
@@ -87,9 +87,9 @@ source "$ITEM_DIR/battery.sh"
 
 sketchybar --add item input_method right \
   --set input_method script="$PLUGIN_DIR/input_method.sh" \
-                         padding_left=0 \
-                         padding_right=0 \
-                         update_freq=1 \
+  padding_left=0 \
+  padding_right=0 \
+  update_freq=1
 
 # sketchybar --add item wifi right \
 #            --set wifi script='sketchybar --set $NAME label="$INFO"' \
@@ -123,7 +123,6 @@ source "$ITEM_DIR/cpu.sh"
 #                     background.color=0xffB48EAD \
 #                     background.height=20 \
 #                     background.padding_left=5
-
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update

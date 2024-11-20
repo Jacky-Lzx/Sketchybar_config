@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 export BLACK=0xff181926
 export WHITE=0xffcdd6f4
 export RED=0xfff38ba8
@@ -12,7 +11,6 @@ export ORANGE=0xfffab387
 export MAGENTA=0xffcba6f7
 # export GREY=0xff939ab7
 export GREY=0xffcdd6f4
-export TRANSPARENT=0x00000000
 
 # General bar colors
 # export BAR_COLOR=0xff1e1e2e
@@ -20,8 +18,8 @@ export TRANSPARENT=0x00000000
 export BAR_COLOR=0x00000000
 # export BAR_BORDER_COLOR=0xff494d64 #0xa024273a
 export BAR_BORDER_COLOR=0x00494d64 #0xa024273a
-export ICON_COLOR=$WHITE # Color of all icons
-export LABEL_COLOR=$WHITE # Color of all labels
+export ICON_COLOR=$WHITE           # Color of all icons
+export LABEL_COLOR=$WHITE          # Color of all labels
 export BACKGROUND_1=0x603c3e4f
 export BACKGROUND_2=0x60494d64
 
@@ -32,80 +30,63 @@ export POPUP_BORDER_COLOR=$WHITE
 
 export SHADOW_COLOR=$BLACK
 
-export TRANSPARENT=0x00000000
+----------------------------------------
+
+# New color definitions
+
+----------------------------------------
+export Transparent=0x00000000
 # Color Palette: Catppuccin Mocha
-export CATPPUCCIN_MOCHA_ROSEWATER=0xfff5e0dc
-export CATPPUCCIN_MOCHA_FLAMINGO=0xfff2cdcd
-export CATPPUCCIN_MOCHA_PINK=0xfff5c2e7
-export CATPPUCCIN_MOCHA_MAUVE=0xffcba6f7
-export CATPPUCCIN_MOCHA_RED=0xfff38ba8
-export CATPPUCCIN_MOCHA_MAROON=0xffeba0ac
-export CATPPUCCIN_MOCHA_PEACH=0xfffab387
-export CATPPUCCIN_MOCHA_YELLOW=0xfff9e2af
-export CATPPUCCIN_MOCHA_GREEN=0xffa6e3a1
-export CATPPUCCIN_MOCHA_TEAL=0xff94e2d5
-export CATPPUCCIN_MOCHA_SKY=0xff89dceb
-export CATPPUCCIN_MOCHA_SAPPHIRE=0xff74c7ec
-export CATPPUCCIN_MOCHA_BLUE=0xff89b4fa
-export CATPPUCCIN_MOCHA_LAVENDER=0xffb4befe
-export CATPPUCCIN_MOCHA_TEXT=0xffcdd6f4
-export CATPPUCCIN_MOCHA_SUBTEXT_1=0xffbac2de
-export CATPPUCCIN_MOCHA_SUBTEXT_0=0xffa6adc8
-export CATPPUCCIN_MOCHA_OVERLAY_2=0xff9399b2
-export CATPPUCCIN_MOCHA_OVERLAY_1=0xff7f849c
-export CATPPUCCIN_MOCHA_OVERLAY_0=0xff6c7086
-export CATPPUCCIN_MOCHA_SURFACE_2=0xff585b70
-export CATPPUCCIN_MOCHA_SURFACE_1=0xff45475a
-export CATPPUCCIN_MOCHA_SURFACE_0=0xff313244
-export CATPPUCCIN_MOCHA_BASE=0xff1e1e2e
-export CATPPUCCIN_MOCHA_MANTLE=0xff181825
-export CATPPUCCIN_MOCHA_CRUST=0xff11111b
+export Catppuccin_Mocha_Rosewater=0xfff5e0dc
+export Catppuccin_Mocha_Flamingo=0xfff2cdcd
+export Catppuccin_Mocha_Pink=0xfff5c2e7
+export Catppuccin_Mocha_Mauve=0xffcba6f7
+export Catppuccin_Mocha_Red=0xfff38ba8
+export Catppuccin_Mocha_Maroon=0xffeba0ac
+export Catppuccin_Mocha_Peach=0xfffab387
+export Catppuccin_Mocha_Yellow=0xfff9e2af
+export Catppuccin_Mocha_Green=0xffa6e3a1
+export Catppuccin_Mocha_Teal=0xff94e2d5
+export Catppuccin_Mocha_Sky=0xff89dceb
+export Catppuccin_Mocha_Sapphire=0xff74c7ec
+export Catppuccin_Mocha_Blue=0xff89b4fa
+export Catppuccin_Mocha_Lavender=0xffb4befe
+export Catppuccin_Mocha_Text=0xffcdd6f4
+export Catppuccin_Mocha_Subtext_1=0xffbac2de
+export Catppuccin_Mocha_Subtext_0=0xffa6adc8
+export Catppuccin_Mocha_Overlay_2=0xff9399b2
+export Catppuccin_Mocha_Overlay_1=0xff7f849c
+export Catppuccin_Mocha_Overlay_0=0xff6c7086
+export Catppuccin_Mocha_Surface_2=0xff585b70
+export Catppuccin_Mocha_Surface_1=0xff45475a
+export Catppuccin_Mocha_Surface_0=0xff313244
+export Catppuccin_Mocha_Base=0xff1e1e2e
+export Catppuccin_Mocha_Mantle=0xff181825
+export Catppuccin_Mocha_Crust=0xff11111b
 
-export BAR_COLOR=$CATPPUCCIN_MOCHA_BASE
-export BAR_BORDER_COLOR=$CATPPUCCIN_MOCHA_SURGACE_2
-export BACKGROUND_COLOR=$TRANSPARENT
+export Bar_Color=$Catppuccin_Mocha_Base
+export Bar_Border_Color=$Catppuccin_Mocha_Surface_2
+export Background_Color=$Catppuccin_Mocha_Base
 
-export TEXT_DARK_COLOR=$CATPPUCCIN_MOCHA_BASE
-export TEXT_LIGHT_COLOR=$CATPPUCCIN_MOCHA_TEXT
+export Text_Dark_Color=$Catppuccin_Mocha_Base
+export Text_Light_Color=$Catppuccin_Mocha_Text
 
-export SPACE_SELECTED_BACKGROUND_BORDER_COLOR=$CATPPUCCIN_MOCHA_ROSEWATER
-export SPACE_SELECTED_BACKGROUND_COLOR=$CATPPUCCIN_MOCHA_ROSEWATER
-export SPACE_SELECTED_COLOR=$TEXT_DARK_COLOR
+export Apple_Background_Color=$Catppuccin_Mocha_Green
+export Apple_Foreground_Color=$Text_Dark_Color
 
-export SPACE_UNSELECTED_BACKGROUND_BORDER_COLOR=$TEXT_LIGHT_COLOR
-export SPACE_UNSELECTED_BACKGROUND_COLOR=$BACKGROUND_1
-export SPACE_UNSELECTED_COLOR=$TEXT_LIGHT_COLOR
+export Space_Selected_Background_Border_Color=$Catppuccin_Mocha_Rosewater
+export Space_Selected_Background_Color=$Catppuccin_Mocha_Rosewater
+export Space_Selected_Color=$Text_Dark_Color
+export Space_Unselected_Background_Border_Color=$Text_Light_Color
+export Space_Unselected_Background_Color=$BACKGROUND_1
+export Space_Unselected_Color=$Text_Light_Color
 
-export CALENDER_BACKGROUND_COLOR=$CATPPUCCIN_MOCHA_MAUVE
-export BATTERY_BACKGROUND_COLOR=$CATPPUCCIN_MOCHA_GREEN
-export INPUT_EN_BACKGROUND_COLOR=$CATPPUCCIN_MOCHA_SKY
-export INPUT_CN_BACKGROUND_COLOR=$CATPPUCCIN_MOCHA_YELLOW
+export Volume_Background_Color=$Background_Color
+export Volume_Background_Border_Color=$Catppuccin_Mocha_Pink
 
-SPACES_COLORS=(
-  $CATPPUCCIN_MOCHA_FLAMINGO
-  $CATPPUCCIN_MOCHA_PINK
-  $CATPPUCCIN_MOCHA_MAUVE
-  $CATPPUCCIN_MOCHA_RED
-  $CATPPUCCIN_MOCHA_MAROON
-  $CATPPUCCIN_MOCHA_PEACH
-  $CATPPUCCIN_MOCHA_YELLOW
-  $CATPPUCCIN_MOCHA_GREEN
-  $CATPPUCCIN_MOCHA_TEAL
-  $CATPPUCCIN_MOCHA_SKY
-  $CATPPUCCIN_MOCHA_SAPPHIRE
-  $CATPPUCCIN_MOCHA_BLUE
-  $CATPPUCCIN_MOCHA_LAVENDER
-  $CATPPUCCIN_MOCHA_FLAMINGO
-  $CATPPUCCIN_MOCHA_PINK
-  $CATPPUCCIN_MOCHA_MAUVE
-  $CATPPUCCIN_MOCHA_RED
-  $CATPPUCCIN_MOCHA_MAROON
-  $CATPPUCCIN_MOCHA_PEACH
-  $CATPPUCCIN_MOCHA_YELLOW
-  $CATPPUCCIN_MOCHA_GREEN
-  $CATPPUCCIN_MOCHA_TEAL
-  $CATPPUCCIN_MOCHA_SKY
-  $CATPPUCCIN_MOCHA_SAPPHIRE
-  $CATPPUCCIN_MOCHA_BLUE
-  $CATPPUCCIN_MOCHA_LAVENDER
-)
+export Input_EN_Background_Color=$Catppuccin_Mocha_Sky
+export Input_CN_Background_Color=$Catppuccin_Mocha_Yellow
+
+export Battery_Background_Color=$Catppuccin_Mocha_Green
+
+export Calender_Background_Color=$Catppuccin_Mocha_Mauve
