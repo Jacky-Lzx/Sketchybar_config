@@ -60,7 +60,7 @@ defaults=(
   popup.background.corner_radius=2
   popup.background.border_width=2
   popup.background.border_color=$POPUP_BORDER_COLOR
-  popup.background.color=$POPUP_BACKGROUND_COLOR
+  popup.background.color=$Nowplaying_Popup_Background_Color
   popup.blur_radius=20
   popup.background.shadow.drawing=on
 )
@@ -74,7 +74,7 @@ source "$ITEM_DIR/yabai.sh"
 source "$ITEM_DIR/front_app.sh"
 
 # Center
-# source "$ITEM_DIR/spotify.sh"
+source "$ITEM_DIR/nowplaying.sh"
 
 # Right
 source "$ITEM_DIR/calendar.sh"
