@@ -26,7 +26,6 @@ mouse_clicked() {
   fi
 }
 
-echo "spaces: $SENDER"
 case "$SENDER" in
 "mouse.clicked")
   mouse_clicked

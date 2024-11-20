@@ -74,9 +74,6 @@ mouse_clicked() {
   window_state
 }
 
-echo "Hello world2"
-echo "$SENDER"
-
 case "$SENDER" in
 "mouse.clicked")
   mouse_clicked
