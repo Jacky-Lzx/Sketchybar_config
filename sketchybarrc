@@ -7,10 +7,7 @@ ITEM_DIR="$CONFIG_DIR/items"     # Directory where the items are configured
 PLUGIN_DIR="$CONFIG_DIR/plugins" # Directory where all the plugin scripts are stored
 
 FONT="SF Pro" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
-# FONT="Cascadia Code NF" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
-# FONT="SauceCodePro Nerd Font Mono" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
-# FONT="Symbols Nerd Font"
-PADDINGS=3 # All paddings use this value (icon, label, background)
+PADDINGS=3    # All paddings use this value (icon, label, background)
 
 # Setting up and starting the helper process
 HELPER=git.felix.helper
@@ -109,6 +106,8 @@ sketchybar --add item input_method right \
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/cpu.sh"
 
+# sketchybar --add alias "网易云音乐,Item-0" center
+
 # source "$ITEM_DIR/stats.sh"
 #
 # sketchybar -m --add item battery right \
@@ -126,5 +125,4 @@ source "$ITEM_DIR/cpu.sh"
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update
-
 echo "sketchybar configuation loaded.."
