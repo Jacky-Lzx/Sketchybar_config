@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source "$CONFIG_DIR/colors.sh"
+
 cpu_top=(
   label.font="$FONT:Semibold:7"
   label=CPU
@@ -18,6 +20,8 @@ cpu_percent=(
   icon.drawing=off
   update_freq=4
   mach_helper="$HELPER"
+  background.drawing=off
+  # background.color=$Transparent
 )
 
 cpu_sys=(
@@ -27,8 +31,8 @@ cpu_sys=(
   label.drawing=off
   icon.drawing=off
   background.height=30
-  background.drawing=on
-  background.color=$TRANSPARENT
+  background.drawing=off
+  # background.color=$Transparent
 )
 
 cpu_user=(
@@ -36,19 +40,19 @@ cpu_user=(
   label.drawing=off
   icon.drawing=off
   background.height=30
-  background.drawing=on
-  background.color=$TRANSPARENT
+  background.drawing=off
+  # background.color=$Transparent
 )
 
-sketchybar                                       \
-           --add item cpu.top right              \
-           --set cpu.top "${cpu_top[@]}"         \
-                                                 \
-           --add item cpu.percent right          \
-           --set cpu.percent "${cpu_percent[@]}" \
-                                                 \
-           --add graph cpu.sys right 75          \
-           --set cpu.sys "${cpu_sys[@]}"         \
-                                                 \
-           --add graph cpu.user right 75         \
-           --set cpu.user "${cpu_user[@]}"
+sketchybar \
+  --add item cpu.top right \
+  --set cpu.top "${cpu_top[@]}" \
+  \
+  --add item cpu.percent right \
+  --set cpu.percent "${cpu_percent[@]}" \
+  \
+  --add graph cpu.sys right 75 \
+  --set cpu.sys "${cpu_sys[@]}" \
+  \
+  --add graph cpu.user right 75 \
+  --set cpu.user "${cpu_user[@]}"
