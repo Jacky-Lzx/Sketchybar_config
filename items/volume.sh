@@ -9,13 +9,14 @@ volume_slider=(
   padding_right=0
   label.drawing=off
   icon.drawing=off
-  background.color=$Volume_Background_Color
+  # background.color=$Volume_Background_Color
+  background.color=$Transparent
   # background.border_color=$Volume_Background_Border_Color
   background.border_width=2
   slider.highlight_color=0xfff9e2af
   slider.background.height=5
   slider.background.corner_radius=3
-  slider.background.color=$Text_Light_Color
+  slider.background.color=$Text_Dark_Color
   slider.knob=􀀁
   slider.knob.drawing=off
 )
@@ -25,24 +26,25 @@ volume_icon=(
   padding_left=0
   padding_right=0
   icon=$VOLUME_100
-  icon.width=0
+  icon.width=20
   icon.align=left
   # icon.padding_left=10
   # icon.padding_right=10
   icon.font="$FONT:Regular:14.0"
-  icon.color=$Text_Light_Color
-  background.color=$Volume_Background_Color
-  background.border_color=$Volume_Background_Border_Color
-  background.border_width=2
-  label.width=25
+  icon.color=$Text_Dark_Color
+  background.color=$Transparent
+  # background.border_color=$Volume_Background_Border_Color
+  # background.border_width=2
+  # label.width=25
   label.align=left
   label.font="$FONT:Regular:14.0"
 )
 
-# status_bracket=(
-#   background.color=$BACKGROUND_1
-#   background.border_color=$BACKGROUND_2
-# )
+status_bracket=(
+  background.color=$Volume_Background_Color
+  # background.border_color=$Volume_Background_Border_Color
+  # background.border_width=2
+)
 
 sketchybar --add slider volume right \
   --set volume "${volume_slider[@]}" \
@@ -54,5 +56,5 @@ sketchybar --add slider volume right \
   --add item volume_icon right \
   --set volume_icon "${volume_icon[@]}"
 
-# sketchybar --add bracket status brew github.bell volume_icon \
-#            --set status "${status_bracket[@]}"
+sketchybar --add bracket volume_bracket volume volume_icon \
+  --set volume_bracket "${status_bracket[@]}"

@@ -81,7 +81,7 @@ export Space_Unselected_Background_Border_Color=$Text_Light_Color
 export Space_Unselected_Background_Color=$BACKGROUND_1
 export Space_Unselected_Color=$Text_Light_Color
 
-export Volume_Background_Color=$Background_Color
+export Volume_Background_Color=$Catppuccin_Mocha_Pink
 export Volume_Background_Border_Color=$Catppuccin_Mocha_Pink
 
 export Input_EN_Background_Color=$Catppuccin_Mocha_Sky
