@@ -10,10 +10,10 @@ FONT="SF Pro" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
 PADDINGS=3    # All paddings use this value (icon, label, background)
 
 # Setting up and starting the helper process
-HELPER=git.felix.helper
-killall helper
-(cd $CONFIG_DIR/helper && make)
-$CONFIG_DIR/helper/helper $HELPER >/dev/null 2>&1 &
+# HELPER=git.felix.helper
+# killall helper
+# (cd $CONFIG_DIR/helper && make)
+# $CONFIG_DIR/helper/helper $HELPER >/dev/null 2>&1 &
 
 # Unload the macOS on screen indicator overlay for volume change
 # launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist > /dev/null 2>&1 &
@@ -105,6 +105,7 @@ sketchybar --add item input_method right \
 
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/cpu.sh"
+source "$ITEM_DIR/memory.sh"
 
 # sketchybar --add alias "网易云音乐,Item-0" center
 

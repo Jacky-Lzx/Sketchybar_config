@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# HELPER=cpu_update
+killall cpu_load
+(cd $CONFIG_DIR/helper/event_providers/cpu_load && make)
+$CONFIG_DIR/helper/event_providers/cpu_load/bin/cpu_load cpu_update 1.0 >/dev/null 2>&1 &
+
 source "$CONFIG_DIR/colors.sh"
 
 cpu_top=(
@@ -7,7 +12,7 @@ cpu_top=(
   label=CPU
   icon.drawing=off
   width=0
-  padding_right=15
+  # padding_right=15
   y_offset=6
 )
 
@@ -15,11 +20,12 @@ cpu_percent=(
   label.font="$FONT:Heavy:12"
   label=CPU
   y_offset=-4
-  padding_right=15
-  width=55
+  # padding_right=15
+  width=40
   icon.drawing=off
-  update_freq=4
-  mach_helper="$HELPER"
+  script="$PLUGIN_DIR/cpu.sh"
+  # update_freq=4
+  # mach_helper="$HELPER"
   background.drawing=off
   # background.color=$Transparent
 )
@@ -50,9 +56,10 @@ sketchybar \
   \
   --add item cpu.percent right \
   --set cpu.percent "${cpu_percent[@]}" \
+  --subscribe cpu.percent cpu_update \
   \
-  --add graph cpu.sys right 75 \
+  --add graph cpu.sys rightw 45 \
   --set cpu.sys "${cpu_sys[@]}" \
   \
-  --add graph cpu.user right 75 \
+  --add graph cpu.user right 45 \
   --set cpu.user "${cpu_user[@]}"

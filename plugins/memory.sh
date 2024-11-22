@@ -2,12 +2,14 @@
 
 source "$CONFIG_DIR/colors.sh"
 
-cpu_update() {
-  USER_LOAD="0.$user_load"
-  SYS_LOAD="0.$sys_load"
+memory_update() {
+  # USER_LOAD="0.$user_load"
+  # SYS_LOAD="0.$sys_load"
+  # MEM_LOAD="$used_percentage%"
 
   LOAD_COLOR=$Text_Light_Color
-  case $total_load in
+  PERCENTAGE=$used_percentage
+  case $PERCENTAGE in
   [0-4][0-9])
     # LOAD_COLOR=$Catppuccin_Mocha_Green
     LOAD_COLOR=$Text_Light_Color
@@ -20,13 +22,12 @@ cpu_update() {
     ;;
   esac
 
-  sketchybar --push cpu.sys $SYS_LOAD
-  sketchybar --push cpu.user $USER_LOAD
-  sketchybar --set cpu.percent label="$total_load%" label.color="$LOAD_COLOR"
+  sketchybar --push memory.sys "0.$used_percentage"
+  sketchybar --set memory.percent label="$used_percentage%" label.color="$LOAD_COLOR"
 }
 
 case "$SENDER" in
-"cpu_update")
-  cpu_update
+"memory_update")
+  memory_update
   ;;
 esac
