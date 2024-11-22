@@ -1,67 +1,19 @@
 #!/bin/bash
 
-source "$CONFIG_DIR/colors.sh" # Loads all defined colors
-source "$CONFIG_DIR/icons.sh"  # Loads all defined icons
-
 ITEM_DIR="$CONFIG_DIR/items"     # Directory where the items are configured
 PLUGIN_DIR="$CONFIG_DIR/plugins" # Directory where all the plugin scripts are stored
 
-FONT="SF Pro" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
-PADDINGS=3    # All paddings use this value (icon, label, background)
-
-# Setting up and starting the helper process
-# HELPER=git.felix.helper
-# killall helper
-# (cd $CONFIG_DIR/helper && make)
-# $CONFIG_DIR/helper/helper $HELPER >/dev/null 2>&1 &
+source "$CONFIG_DIR/configs.sh"
+source "$CONFIG_DIR/colors.sh" # Loads all defined colors
+source "$CONFIG_DIR/icons.sh"  # Loads all defined icons
 
 # Unload the macOS on screen indicator overlay for volume change
 # launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist > /dev/null 2>&1 &
 
 # Setting up the general bar appearance of the bar
-bar=(
-  height=26
-  color=$Bar_Color
-  blur_radius=30
-  border_width=0
-  border_color=$Bar_Border_Color
-  corner_radius=0
-  shadow=off
-  position=top
-  sticky=on
-  padding_right=0
-  padding_left=0
-  y_offset=4
-  margin=10
-)
-
 sketchybar --bar "${bar[@]}"
 
 # Setting up default values
-defaults=(
-  updates=when_shown
-  icon.font="$FONT:Bold:14.0"
-  icon.color=$ICON_COLOR
-  icon.padding_left=$PADDINGS
-  icon.padding_right=$PADDINGS
-  label.font="$FONT:Semibold:13.0"
-  label.color=$LABEL_COLOR
-  label.padding_left=$PADDINGS
-  label.padding_right=$PADDINGS
-  padding_right=$PADDINGS
-  padding_left=$PADDINGS
-  background.height=22
-  background.corner_radius=0
-  background.border_width=0
-  background.color=$Background_Color
-  popup.background.corner_radius=2
-  popup.background.border_width=2
-  popup.background.border_color=$POPUP_BORDER_COLOR
-  popup.background.color=$Nowplaying_Popup_Background_Color
-  popup.blur_radius=20
-  popup.background.shadow.drawing=on
-)
-
 sketchybar --default "${defaults[@]}"
 
 # Left
@@ -76,53 +28,10 @@ source "$ITEM_DIR/nowplaying.sh"
 # Right
 source "$ITEM_DIR/calendar.sh"
 source "$ITEM_DIR/battery.sh"
-
-# sketchybar --add item wifi right                         \
-#            --set wifi    script="$PLUGIN_DIR/wifi.sh"    \
-#                          background.padding_right=12     \
-#                          update_freq=5
-
-sketchybar --add item input_method right \
-  --set input_method script="$PLUGIN_DIR/input_method.sh" \
-  padding_left=0 \
-  padding_right=0 \
-  update_freq=1
-
-# sketchybar --add item wifi right \
-#            --set wifi script='sketchybar --set $NAME label="$INFO"' \
-#            --subscribe wifi wifi_change
-
-# sketchybar --add item wifi right \
-#            --set wifi script="$PLUGIN_DIR/wifi.sh" \
-#                       associated_display=1,3 \
-#                       background.height=32 \
-#                       background.padding_left=10 \
-#                       background.padding_right=10 \
-#                       icon.padding_left=10 \
-#                       label.padding_right=10 \
-#            --subscribe wifi system_woke \
-#            --subscribe wifi mouse.clicked
-
+source "$ITEM_DIR/input_method.sh"
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/cpu.sh"
 source "$ITEM_DIR/memory.sh"
-
-# sketchybar --add alias "网易云音乐,Item-0" center
-
-# source "$ITEM_DIR/stats.sh"
-#
-# sketchybar -m --add item battery right \
-#               --set battery update_freq=3 \
-#                             script="~/.config/sketchybar/plugins/power.sh" \
-#                             icon= \
-#                             background.color=0xff3B4252 \
-#                             background.height=20
-#
-# sketchybar -m --add item power_logo right \
-#               --set power_logo icon=⏻ \
-#                     background.color=0xffB48EAD \
-#                     background.height=20 \
-#                     background.padding_left=5
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update
