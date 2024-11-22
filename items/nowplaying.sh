@@ -4,7 +4,8 @@
 
 media_ctrl_anchor=(
   script="$PLUGIN_DIR/media_ctrl.sh"
-  label.max_chars=30
+  label.max_chars=25
+  label.align=center
   # click_script="$POPUP_SCRIPT"
   # popup.horizontal=on
   # popup.align=center
