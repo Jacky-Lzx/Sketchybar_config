@@ -2,7 +2,7 @@ local colors = require("colors")
 local app_icons = require("helpers.icon_map")
 
 local nowplaying = sbar.add("item", "nowplaying", {
-  position = "center",
+  position = "q",
   updates = true,
   update_freq = 1,
   icon = {
@@ -11,7 +11,7 @@ local nowplaying = sbar.add("item", "nowplaying", {
     color = colors.Catppuccin.Mocha.Text
   },
   label = {
-    max_chars = 50,
+    max_chars = 30,
     align = "center",
   },
   background = {

@@ -16,7 +16,7 @@ sbar.default({
 		highlight = colors.background,
 		padding_left = settings.paddings,
 		padding_right = settings.paddings,
-		corner_radius = 6,
+		-- corner_radius = 6,
 		background = { image = { corner_radius = 12 } },
 	},
 	label = {
@@ -32,9 +32,8 @@ sbar.default({
 	},
 	background = {
 		-- color = colors.item_background,
-		align = "center",
-		height = 22,
 		corner_radius = 10,
+		height = 22,
 		border_width = 0,
 		border_color = colors.yellow,
 		image = {

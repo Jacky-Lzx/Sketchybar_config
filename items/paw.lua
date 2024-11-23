@@ -1,7 +1,7 @@
 local colors = require("colors")
 
 local paw = sbar.add("item", {
-	width = 30,
+	-- width = 30,
 	background = {
 		color = colors.item_background,
 	},
@@ -11,6 +11,8 @@ local paw = sbar.add("item", {
 	label = {
 		align = "center",
 		string = "􀣺",
+		padding_left = 10,
+		padding_right = 10,
 		-- font = settings.font.text .. ":Regular:16.0",
 		color = colors.Catppuccin.Mocha.Green,
 	},

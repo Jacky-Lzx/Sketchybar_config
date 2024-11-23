@@ -10,4 +10,4 @@ require("items.nowplaying")
 -- right
 require("items.calendar")
 require("items.widgets")
-require("items.media")
+-- require("items.media")
