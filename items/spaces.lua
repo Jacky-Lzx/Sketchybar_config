@@ -40,6 +40,9 @@ for i = 1, 10, 1 do
 			y_offset = -1,
 			highlight_color = colors.yellow,
 		},
+		background = {
+			color = colors.Catppuccin.Mocha.Base,
+		},
 		padding_right = 2,
 		padding_left = 2,
 		-- background = {
@@ -54,14 +57,14 @@ for i = 1, 10, 1 do
 	spaces[i] = space
 
 	-- Single item bracket for space items to achieve double border on highlight
-	local space_bracket = sbar.add("bracket", { space.name }, {
-		background = {
-			color = colors.transparent,
-			border_color = colors.sky,
-			height = 28,
-			border_width = 2,
-		},
-	})
+	-- local space_bracket = sbar.add("bracket", { space.name }, {
+	-- 	background = {
+	-- 		color = colors.transparent,
+	-- 		border_color = colors.sky,
+	-- 		height = 28,
+	-- 		border_width = 2,
+	-- 	},
+	-- })
 
 	-- Padding space
 	sbar.add("space", "space.padding." .. i, {
@@ -96,9 +99,9 @@ for i = 1, 10, 1 do
 			-- 	corner_radius = selected and 6,
 			-- },
 		})
-		space_bracket:set({
-			background = { border_color = selected and colors.yellow },
-		})
+		-- space_bracket:set({
+		-- 	background = { border_color = selected and colors.yellow },
+		-- })
 	end)
 
 	space:subscribe("mouse.clicked", function(env)
@@ -116,31 +119,18 @@ for i = 1, 10, 1 do
 	end)
 end
 
--- sbar.add("bracket", {
--- 	spaces[1].name,
--- 	spaces[2].name,
--- 	spaces[3].name,
--- 	spaces[4].name,
--- 	spaces[5].name,
--- 	spaces[6].name,
--- 	spaces[7].name,
--- 	spaces[8].name,
--- 	spaces[9].name,
--- 	spaces[10].name,
--- }, {
--- 	background = {
--- 		color = colors.background,
--- 		border_color = colors.accent3,
--- 		border_width = 2,
--- 	},
--- })
+sbar.add("bracket", { "/space\\.[0-9]+/" }, {
+	background = {
+		color = colors.Catppuccin.Mocha.Base,
+	},
+})
 
 local space_window_observer = sbar.add("item", {
 	drawing = false,
 	updates = true,
 })
 
-sbar.add("item", { width = 6 })
+-- sbar.add("item", { width = 6 })
 
 -- local spaces_indicator = sbar.add("item", {
 -- 	background = {
@@ -176,7 +166,10 @@ space_window_observer:subscribe("space_windows_change", function(env)
 	for app, count in pairs(env.INFO.apps) do
 		no_app = false
 		local lookup = app_icons[app]
-		local icon = ((lookup == nil) and app_icons["default"] or lookup)
+		local icon = ((lookup == nil) and app_icons["Default"] or lookup)
+		if icon == nil then
+			print("No icon for app: " .. app)
+		end
 		icon_line = icon_line .. utf8.char(0x202F) .. icon
 	end
 
@@ -239,16 +232,16 @@ end)
 -- 	sbar.trigger("swap_menus_and_spaces")
 -- end)
 
-local front_app_icon = sbar.add("item", "front_app_icon", {
-	display = "active",
-	icon = { drawing = false },
-	label = {
-		font = "sketchybar-app-font:Regular:14.0",
-	},
-	updates = true,
-	-- padding_right = 0,
-	-- padding_left = 0,
-})
+-- local front_app_icon = sbar.add("item", "front_app_icon", {
+-- 	display = "active",
+-- 	icon = { drawing = false },
+-- 	label = {
+-- 		font = "sketchybar-app-font:Regular:14.0",
+-- 	},
+-- 	updates = true,
+-- 	-- padding_right = 0,
+-- 	-- padding_left = 0,
+-- })
 
 -- disable front_app
 -- local front_app = sbar.add("item", "front_app", {
@@ -265,20 +258,20 @@ local front_app_icon = sbar.add("item", "front_app_icon", {
 -- 	padding_left = -6,
 -- })
 
-front_app_icon:subscribe("front_app_switched", function(env)
-	local icon_name = env.INFO
-	local lookup = app_icons[icon_name]
-	local icon = ((lookup == nil) and app_icons["default"] or lookup)
-	front_app_icon:set({ label = { string = icon, color = colors.accent1 } })
-	-- front_app_icon:set(
-	-- 	{
-	-- 		label = {
-	-- 			string = icon_name,
-	-- 			color = colors.accent1,
-	-- 		}
-	-- 	}
-	-- )
-end)
+-- front_app_icon:subscribe("front_app_switched", function(env)
+-- 	local icon_name = env.INFO
+-- 	local lookup = app_icons[icon_name]
+-- 	local icon = ((lookup == nil) and app_icons["default"] or lookup)
+-- 	front_app_icon:set({ label = { string = icon, color = colors.accent1 } })
+-- 	-- front_app_icon:set(
+-- 	-- 	{
+-- 	-- 		label = {
+-- 	-- 			string = icon_name,
+-- 	-- 			color = colors.accent1,
+-- 	-- 		}
+-- 	-- 	}
+-- 	-- )
+-- end)
 
 -- front_app:subscribe("mouse.clicked", function(env)
 -- 	sbar.trigger("swap_menus_and_spaces")
