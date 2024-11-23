@@ -5,17 +5,19 @@ local app_icons = require("helpers.icon_map")
 
 local spaces = {}
 
+local spaces_color = colors.Catppuccin.Mocha.Yellow
+
 local colors_spaces = {
-	[1] = colors.yellow,
-	[2] = colors.yellow,
-	[3] = colors.yellow,
-	[4] = colors.yellow,
-	[5] = colors.yellow,
-	[6] = colors.yellow,
-	[7] = colors.yellow,
-	[8] = colors.yellow,
-	[9] = colors.yellow,
-	[10] = colors.yellow,
+	[1] = spaces_color,
+	[2] = spaces_color,
+	[3] = spaces_color,
+	[4] = spaces_color,
+	[5] = spaces_color,
+	[6] = spaces_color,
+	[7] = spaces_color,
+	[8] = spaces_color,
+	[9] = spaces_color,
+	[10] = spaces_color,
 }
 
 for i = 1, 10, 1 do
@@ -30,7 +32,7 @@ for i = 1, 10, 1 do
 			padding_left = 5,
 			padding_right = 0,
 			color = colors_spaces[i],
-			highlight_color = colors.yellow,
+			highlight_color = spaces_color,
 		},
 		label = {
 			padding_right = 15,
@@ -38,7 +40,7 @@ for i = 1, 10, 1 do
 			color = colors_spaces[i],
 			font = "sketchybar-app-font:Regular:14.0",
 			y_offset = -1,
-			highlight_color = colors.yellow,
+			highlight_color = spaces_color,
 		},
 		background = {
 			color = colors.Catppuccin.Mocha.Base,
@@ -119,11 +121,11 @@ for i = 1, 10, 1 do
 	end)
 end
 
-sbar.add("bracket", { "/space\\.[0-9]+/" }, {
-	background = {
-		color = colors.Catppuccin.Mocha.Base,
-	},
-})
+-- sbar.add("bracket", "space_bracket", { "/space\\.[0-9]*/" }, {
+-- 	background = {
+-- 		color = colors.Catppuccin.Mocha.Base,
+-- 	},
+-- })
 
 local space_window_observer = sbar.add("item", {
 	drawing = false,
