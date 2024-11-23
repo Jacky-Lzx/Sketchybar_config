@@ -19,6 +19,7 @@ local volume_item = sbar.add("item", "widgets.volume1", {
 	},
 	label = {
 		string = "??%",
+		align = "right",
 		padding_left = -1,
 		font = { family = settings.font.numbers },
 		color = volume_color,
@@ -71,13 +72,15 @@ volume_item:subscribe("volume_change", function(env)
 		icon = icons.volume._10
 	end
 
-	local lead = ""
-	if volume < 10 then
-		lead = "0"
-	end
+	-- local lead = ""
+	-- if volume < 10 then
+	-- 	lead = " "
+	-- end
 
 	-- volume_icon:set({ label = icon, icon = { color = colors.tn_black3 } })
-	volume_item:set({ icon = icon, label = lead .. volume .. "%" })
+	-- volume_item:set({ icon = icon, label = lead .. volume .. "%" })
+	volume_item:set({ icon = icon, label = volume .. "%" })
+	-- volume_item:set({ icon = icon, label = string.format("%2d", volume) .. "%" })
 	volume_slider:set({ slider = { percentage = volume } })
 end)
 
