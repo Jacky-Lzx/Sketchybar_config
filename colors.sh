@@ -66,7 +66,7 @@ export Catppuccin_Mocha_Crust=0xff11111b
 
 export Bar_Color=$Catppuccin_Mocha_Base
 export Bar_Border_Color=$Catppuccin_Mocha_Surface_2
-export Background_Color=$Catppuccin_Mocha_Base
+export Background_Color=$Transparent
 
 export Text_Dark_Color=$Catppuccin_Mocha_Base
 export Text_Light_Color=$Catppuccin_Mocha_Text
