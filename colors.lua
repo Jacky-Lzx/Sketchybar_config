@@ -1,32 +1,36 @@
 local Catppuccin = {
 	Mocha = {
-		Rosewater = "0xfff5e0dc",
-		Flamingo = "0xfff2cdcd",
-		Pink = "0xfff5c2e7",
-		Mauve = "0xffcba6f7",
-		Red = "0xfff38ba8",
-		Maroon = "0xffeba0ac",
-		Peach = "0xfffab387",
-		Yellow = "0xfff9e2af",
-		Green = "0xffa6e3a1",
-		Teal = "0xff94e2d5",
-		Sky = "0xff89dceb",
-		Sapphire = "0xff74c7ec",
-		Blue = "0xff89b4fa",
-		Lavender = "0xffb4befe",
-		Text = "0xffcdd6f4",
-		Subtext_1 = "0xffbac2de",
-		Subtext_0 = "0xffa6adc8",
-		Overlay_2 = "0xff9399b2",
-		Overlay_1 = "0xff7f849c",
-		Overlay_0 = "0xff6c7086",
-		Surface_2 = "0xff585b70",
-		Surface_1 = "0xff45475a",
-		Surface_0 = "0xff313244",
-		Base = "0xff1e1e2e",
-		Mantle = "0xff181825",
-		Crust = "0xff11111b",
+		Rosewater = 0xfff5e0dc,
+		Flamingo = 0xfff2cdcd,
+		Pink = 0xfff5c2e7,
+		Mauve = 0xffcba6f7,
+		Red = 0xfff38ba8,
+		Maroon = 0xffeba0ac,
+		Peach = 0xfffab387,
+		Yellow = 0xfff9e2af,
+		Green = 0xffa6e3a1,
+		Teal = 0xff94e2d5,
+		Sky = 0xff89dceb,
+		Sapphire = 0xff74c7ec,
+		Blue = 0xff89b4fa,
+		Lavender = 0xffb4befe,
+		Text = 0xffcdd6f4,
+		Subtext_1 = 0xffbac2de,
+		Subtext_0 = 0xffa6adc8,
+		Overlay_2 = 0xff9399b2,
+		Overlay_1 = 0xff7f849c,
+		Overlay_0 = 0xff6c7086,
+		Surface_2 = 0xff585b70,
+		Surface_1 = 0xff45475a,
+		Surface_0 = 0xff313244,
+		Base = 0xff1e1e2e,
+		Mantle = 0xff181825,
+		Crust = 0xff11111b,
 	}
+}
+
+local TokyoNight = {
+
 }
 
 return {
@@ -136,4 +140,6 @@ return {
 	soft_white = 0xffeee8d5,
 
 	Catppuccin = Catppuccin,
+
+	item_background = Catppuccin.Mocha.Base,
 }

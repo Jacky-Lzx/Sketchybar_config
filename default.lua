@@ -4,6 +4,8 @@ local colors = require("colors")
 -- Equivalent to the --default domain
 sbar.default({
 	update_freq = 1,
+	updates = "when_shown",
+
 	icon = {
 		font = {
 			family = settings.font.text,
@@ -29,9 +31,11 @@ sbar.default({
 		padding_right = settings.paddings,
 	},
 	background = {
-		height = 26,
-		corner_radius = 2,
-		border_width = 2,
+		-- color = colors.item_background,
+		align = "center",
+		height = 22,
+		corner_radius = 10,
+		border_width = 0,
 		border_color = colors.yellow,
 		image = {
 			corner_radius = 0,
@@ -45,7 +49,7 @@ sbar.default({
 			color = colors.popup.bg,
 			shadow = { drawing = true },
 		},
-		blur_radius = 50,
+		blur_radius = 20,
 	},
 	padding_left = settings.paddings,
 	padding_right = settings.paddings,
