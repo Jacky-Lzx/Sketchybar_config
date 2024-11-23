@@ -5,6 +5,13 @@ local settings = require("settings")
 local input_method = sbar.add("item", "widgets.input_method", {
   position = "right",
   update_freq = 1,
+  icon = {
+    string = "󰘳",
+    color = colors.yellow
+  },
+  background = {
+    color = colors.Catppuccin.Mocha.Base
+  }
 })
 
 local function udpate_input_method()
@@ -14,23 +21,21 @@ local function udpate_input_method()
       if result == nil or result == '' then
         input_method:set({
           icon = {
-            string = "󰘳",
-            drawing = "on",
-            color = colors.yellow
+            color = colors.Catppuccin.Mocha.Peach
           },
           label = {
             string = 'cn',
-            color = colors.yellow
+            color = colors.Catppuccin.Mocha.Peach
           }
         })
       else
         input_method:set({
           icon = {
-            drawing = "off",
+            color = colors.Catppuccin.Mocha.Blue
           },
           label = {
             string = 'en',
-            color = colors.tn_blue,
+            color = colors.Catppuccin.Mocha.Blue,
           }
         })
       end
