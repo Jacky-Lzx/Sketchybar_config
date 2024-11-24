@@ -1,8 +1,8 @@
 local colors = require("colors")
 
-local cpu = require("items.widgets.system.cpu")
-local memory = require("items.widgets.system.memory")
 local wifi_bracket = require("items.widgets.system.wifi")
+local memory = require("items.widgets.system.memory")
+local cpu = require("items.widgets.system.cpu")
 
 ----------------------------------------------------------------------------------------------------
 ----                                         system bracket                                     ----

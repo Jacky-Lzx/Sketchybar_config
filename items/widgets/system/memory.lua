@@ -12,7 +12,7 @@ sbar.exec(
 )
 
 local memory = sbar.add("item", "widgets.memory", {
-  position = "e",
+  position = "right",
   background = {
     height = 22,
     color = { alpha = 0 },

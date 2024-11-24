@@ -10,7 +10,7 @@ local settings = require("settings")
 sbar.exec("killall cpu_load >/dev/null; $CONFIG_DIR/helpers/event_providers/cpu_load/bin/cpu_load cpu_update 1.0")
 
 local cpu = sbar.add("item", "widgets.cpu", {
-  position = "e",
+  position = "right",
   background = {
     height = 22,
     color = { alpha = 0 },

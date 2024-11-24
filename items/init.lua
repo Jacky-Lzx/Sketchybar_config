@@ -4,10 +4,9 @@ require("items.paw")
 require("items.spaces")
 require("items.front_app")
 
--- center
-require("items.nowplaying")
 
 -- right
 require("items.calendar")
 require("items.widgets")
+require("items.nowplaying")
 -- require("items.media")

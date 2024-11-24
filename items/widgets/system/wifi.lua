@@ -2,6 +2,8 @@ local icons = require("icons")
 local colors = require("colors")
 local settings = require("settings")
 
+local position = "right"
+local label_size = 7
 ----------------------------------------------------------------------------------------------------
 ----                                         network                                            ----
 ----------------------------------------------------------------------------------------------------
@@ -11,22 +13,15 @@ sbar.exec(
   "killall network_load >/dev/null; $CONFIG_DIR/helpers/event_providers/network_load/bin/network_load en0 network_update 1.0"
 )
 
-local wifi = sbar.add("item", "widgets.wifi.padding", {
-  position = "e",
-  label = { drawing = false },
-  padding_right = 2,
-  padding_left = 4,
-})
-
 local wifi_up = sbar.add("item", "widgets.wifi_up", {
-  position = "e",
+  position = position,
   padding_left = -5,
   width = 0,
   icon = {
     padding_right = 0,
     font = {
       style = settings.font.style_map["Bold"],
-      size = 9.0,
+      size = label_size,
     },
     string = icons.wifi.upload,
   },
@@ -34,22 +29,22 @@ local wifi_up = sbar.add("item", "widgets.wifi_up", {
     font = {
       family = settings.font.numbers,
       style = settings.font.style_map["Bold"],
-      size = 9.0,
+      size = label_size,
     },
     color = colors.tn_red,
     string = "??? Bps",
   },
-  y_offset = 6,
+  y_offset = 5,
 })
 
 local wifi_down = sbar.add("item", "widgets.wifi_down", {
-  position = "e",
+  position = position,
   padding_left = -5,
   icon = {
     padding_right = 0,
     font = {
       style = settings.font.style_map["Bold"],
-      size = 9.0,
+      size = label_size,
     },
     string = icons.wifi.download,
   },
@@ -57,14 +52,20 @@ local wifi_down = sbar.add("item", "widgets.wifi_down", {
     font = {
       family = settings.font.numbers,
       style = settings.font.style_map["Bold"],
-      size = 9.0,
+      size = label_size,
     },
     color = colors.tn_cyan,
     string = "??? Bps",
   },
-  y_offset = -6,
+  y_offset = -5,
 })
 
+local wifi = sbar.add("item", "widgets.wifi.padding", {
+  position = position,
+  label = { drawing = false },
+  padding_right = 2,
+  padding_left = 2,
+})
 
 -- Background around the item
 local wifi_bracket = sbar.add("bracket", "widgets.wifi.bracket", {
@@ -102,6 +103,7 @@ wifi_up:subscribe("network_update", function(env)
   local up_color = (upload_value == 0) and colors.tn_black1 or colors.tn_red
   local down_color = (download_value == 0) and colors.tn_black1 or colors.tn_cyan
 
+  print(env.upload)
 
   -- Set the label
   wifi_up:set({
