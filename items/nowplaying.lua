@@ -1,18 +1,24 @@
 local colors = require("colors")
 local app_icons = require("helpers.icon_map")
 
+local whitelist = { ["Music"] = true, ["网易云音乐"] = true }
+
 local nowplaying = sbar.add("item", "nowplaying", {
-  position = "q",
+  position = "right",
   updates = true,
   update_freq = 1,
   icon = {
     font = "sketchybar-app-font:Regular:14.0",
     -- string = "􀑪",
-    color = colors.Catppuccin.Mocha.Text
+    color = colors.Catppuccin.Mocha.Rosewater,
+    padding_right = 0,
   },
   label = {
-    max_chars = 30,
+    max_chars = 15,
     align = "center",
+    padding_right = 3,
+    padding_left = 0,
+    color = colors.Catppuccin.Mocha.Rosewater
   },
   background = {
     color = colors.Catppuccin.Mocha.Base
@@ -32,12 +38,18 @@ local function update_music_info(env)
   local title = env.INFO.title
   local artist = env.INFO.artist
 
-  local result = title .. " - " .. artist
+  local result = "􀑪"
+
   local lookup = app_icons[app]
   local icon = ((lookup == nil) and app_icons["Default"] or lookup)
   if icon == nil then
     print("No icon for app: " .. app)
     icon = ""
+  end
+
+  -- Only show info for whitelisted apps
+  if whitelist[app] then
+    result = title .. " - " .. artist
   end
 
   nowplaying:set({
@@ -47,7 +59,6 @@ local function update_music_info(env)
     },
     label = {
       string = result,
-      color = colors.Catppuccin.Mocha.Text
     }
   })
 end
