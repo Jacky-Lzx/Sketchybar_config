@@ -220,6 +220,7 @@ return {
 	["Skim"] = ":pdf:",
 	["zathura"] = ":pdf:",
 	["Aperçu"] = ":pdf:",
+	["福昕高级PDF编辑器"] = ":pdf:",
 	["PDF Expert"] = ":pdf_expert:",
 	["Pearcleaner"] = ":pearcleaner:",
 	["Phoenix Slides"] = ":phoenix_slides:",
