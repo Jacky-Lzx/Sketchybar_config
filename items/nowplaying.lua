@@ -1,5 +1,6 @@
 local colors = require("colors")
 local app_icons = require("helpers.icon_map")
+local settings = require("settings")
 
 local whitelist = { ["Music"] = true, ["网易云音乐"] = true }
 
@@ -28,9 +29,12 @@ local nowplaying = sbar.add("item", "nowplaying", {
 local function update_music_info(env)
 	local playing_state = env.INFO.state
 	if playing_state == "paused" then
-		nowplaying:set({
-			drawing = false,
-		})
+		sbar.animate("tanh", 20, function()
+			nowplaying:set({
+				icon = "􀑪 􀊆",
+				label = "",
+			})
+		end)
 		return
 	end
 
@@ -53,15 +57,17 @@ local function update_music_info(env)
 		result = title
 	end
 
-	nowplaying:set({
-		drawing = true,
-		icon = {
-			string = icon,
-		},
-		label = {
-			string = result,
-		},
-	})
+	sbar.animate("tanh", 20, function()
+		nowplaying:set({
+			-- drawing = true,
+			icon = {
+				string = icon,
+			},
+			label = {
+				string = result,
+			},
+		})
+	end)
 end
 
 nowplaying:subscribe({ "media_change" }, update_music_info)

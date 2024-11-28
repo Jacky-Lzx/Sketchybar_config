@@ -91,16 +91,18 @@ for i = 1, 10, 1 do
 	space:subscribe("space_change", function(env)
 		local selected = env.SELECTED == "true"
 		local color = selected and colors.grey or colors.bg2
-		space:set({
-			icon = { highlight = selected },
-			label = { highlight = selected },
-			-- background = {
-			-- 	height = 25,
-			-- 	border_color = selected and colors_spaces[i],
-			-- 	color = selected and colors_spaces[i],
-			-- 	corner_radius = selected and 6,
-			-- },
-		})
+		sbar.animate("tanh", 10, function()
+			space:set({
+				icon = { highlight = selected },
+				label = { highlight = selected },
+				-- background = {
+				-- 	height = 25,
+				-- 	border_color = selected and colors_spaces[i],
+				-- 	color = selected and colors_spaces[i],
+				-- 	corner_radius = selected and 6,
+				-- },
+			})
+		end)
 		-- space_bracket:set({
 		-- 	background = { border_color = selected and colors.yellow },
 		-- })
@@ -183,7 +185,7 @@ space_window_observer:subscribe("space_windows_change", function(env)
 			label = {
 				string = icon_line,
 				color = colors.sky,
-			}
+			},
 		})
 	end)
 end)
