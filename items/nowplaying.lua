@@ -10,7 +10,7 @@ local nowplaying = sbar.add("item", "nowplaying", {
 	update_freq = 1,
 	icon = {
 		font = "sketchybar-app-font:Regular:14.0",
-		-- string = "􀑪",
+		string = "􀑪 􀊆",
 		color = colors.Catppuccin.Mocha.Rosewater,
 		padding_right = 0,
 	},
